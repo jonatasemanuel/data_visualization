@@ -9,9 +9,18 @@ class RandomWalk():
         # Todos os passeios começam em (0, 0)
         self.x_values, self.y_values = [0], [0]
 
-    def get_step(self, direction, distance):
-            step = direction * distance
-            return step
+    def get_step(self, two=True):
+        if two is True:
+            self.x_direction = choice([1, -1])
+            self.x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
+            x_step = self.x_direction * self.x_distance
+            two = False
+            return x_step
+        self.y_direction = choice([1, -1])
+        self.y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
+        y_step = self.y_direction * self.y_distance
+        return y_step
+
 
     def fill_walk(self):
         """Calcula todos os pontos do passeio."""
@@ -21,10 +30,10 @@ class RandomWalk():
             # x_direction = choice([1, -1])
             # x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
             # x_step = x_direction * x_distance
-            x_step = get_step()
+            x_step = self.get_step()
             # y_direction = choice([1, -1])
             # y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
-            y_step = get_step()
+            y_step = self.get_step()
             # y_step = y_direction * y_distance
             # Rejeita movimentos que não vão a lugar nenhum
             if x_step == 0:
