@@ -9,8 +9,8 @@ class RandomWalk():
         # Todos os passeios começam em (0, 0)
         self.x_values, self.y_values = [0], [0]
 
-    def get_step(self, two=True):
-        if two is True:
+    def get_step(self, steps=True):
+        if steps:
             self.x_direction = choice([1, -1])
             self.x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
             x_step = self.x_direction * self.x_distance
@@ -19,7 +19,7 @@ class RandomWalk():
         self.y_direction = choice([1, -1])
         self.y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
         y_step = self.y_direction * self.y_distance
-        two = True
+        steps = True
         return y_step
 
 
