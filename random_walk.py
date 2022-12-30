@@ -19,6 +19,7 @@ class RandomWalk():
         self.y_direction = choice([1, -1])
         self.y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
         y_step = self.y_direction * self.y_distance
+        two = True
         return y_step
 
 
