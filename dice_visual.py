@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pygal
 from die import Die
 
@@ -17,13 +18,7 @@ for value in range(2, max_result+1):
     frequencies.append(frequency)
 
 # Visualiza os resultados
-hist = pygal.Bar()
-hist.title = 'Results of rollings one D6 1000 times.'
-hist.x_labels = []
-for num_guess in range(2, max_result+1):
-    hist.x_labels.append(num_guess)
-hist.x_title = 'Result'
-hist.y_title = 'Frequency of Result'
-hist.add('D6 + D6',frequencies)
-hist.render_to_file('dice_visual.svg')
-
+plt.plot(frequencies)
+plt.title('Dice roll', fontsize=14)
+plt.tick_params(axis='both', labelsize=14)
+plt.show()

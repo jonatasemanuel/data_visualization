@@ -8,7 +8,7 @@ die_3 = Die(6)
 
 results = []
 for roll_num in range(5000):
-    result = die_1.roll() + die_2.roll()
+    result = die_1.roll() + die_2.roll() + die_3.roll()
     results.append(result)
 
 frequencies = []
